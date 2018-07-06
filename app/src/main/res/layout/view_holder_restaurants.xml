@@ -1,77 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/tv_restaurant_photo"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/resturant_1" />
-
-    <TextView
-        android:id="@+id/tv_restaurant_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/tv_restaurant_photo"
-        android:layout_marginStart="@dimen/margin_medium_2"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_toRightOf="@+id/tv_restaurant_photo"
-        android:text="Casa Pop"
-        android:textColor="@color/secondaryTextColor"
-        android:textSize="@dimen/text_regular_3x" />
-
-    <TextView
-        android:id="@+id/tv_food_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tv_restaurant_name"
-        android:layout_below="@+id/tv_restaurant_name"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:text="Cafe, Italian, Chinese"
-        android:textColor="@color/secondaryTextColor"
-        android:textSize="@dimen/text_regular" />
-
-    <TextView
-        android:id="@+id/tv_food_cost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tv_food_type"
-        android:layout_below="@+id/tv_food_type"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:text="Cost $300 for one"
-        android:textColor="@color/secondaryTextColor"
-        android:textSize="@dimen/text_regular" />
-
-    <ImageView
-        android:id="@+id/iv_star"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_star_orange_24dp"
-        android:layout_below="@+id/tv_food_cost"
-        android:layout_alignLeft="@+id/tv_food_cost"
-        android:layout_marginTop="@dimen/margin_large"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View details"
-        android:textColor="@color/primary"
-        android:layout_toRightOf="@+id/iv_star"
-        android:layout_alignTop="@+id/iv_star"
-        android:layout_marginLeft="80dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/margin_card_medium_2"
+        android:layout_marginTop="@dimen/margin_card_medium_2"
+        android:background="@drawable/round_rectangle"
+        android:elevation="@dimen/margin_small"
+        android:gravity="center"
+        android:padding="@dimen/margin_card_medium"
         android:text="4.6"
         android:textColor="@color/primaryTextColor"
-        android:background="@color/primary"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="@dimen/margin_medium_2"
-        android:padding="@dimen/margin_medium"/>
+        android:textSize="@dimen/text_regular"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_medium_3"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:elevation="@dimen/margin_medium"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/tv_restaurant_photo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/resturant_1" />
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tv_restaurant_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/tv_restaurant_photo"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_toRightOf="@+id/tv_restaurant_photo"
+                android:text="Casa Pop"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/text_regular_2x" />
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tv_food_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_restaurant_name"
+                android:layout_below="@+id/tv_restaurant_name"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="Cafe, Italian, Chinese"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/text_regular" />
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tv_food_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_food_type"
+                android:layout_below="@+id/tv_food_type"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="Cost $300 for one"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/text_regular" />
+
+            <ImageView
+                android:id="@+id/iv_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_food_cost"
+                android:layout_below="@+id/tv_food_cost"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:src="@drawable/ic_star_orange_24dp" />
+
+            <TextView
+                android:id="@+id/tv_view_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/iv_star"
+                android:layout_marginLeft="70dp"
+                android:layout_toRightOf="@+id/iv_star"
+                android:clickable="true"
+                android:text="View details"
+                android:textColor="@color/primary" />
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 
 
 </RelativeLayout>
