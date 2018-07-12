@@ -22,6 +22,8 @@ public class WarDeeModel {
 
     private Map<String, WarDeeVO> mWarDeeMap;
 
+
+
     private WarDeeModel() {
         mDataAgent = RetrofitDataAgentImpl.getObjInstance();
         mWarDeeMap = new HashMap<>();

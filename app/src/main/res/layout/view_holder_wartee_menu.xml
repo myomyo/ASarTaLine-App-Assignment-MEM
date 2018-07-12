@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/margin_xxlarge">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_xlarge"
+            android:layout_weight="1"
+            android:src="@drawable/icons8_noodles_100" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_xlarge"
+            android:layout_weight="1"
+            android:src="@drawable/icons8_taco_100" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_xlarge"
+            android:layout_weight="1"
+            android:src="@drawable/icons8_hamburger_100" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_xlarge"
+            android:layout_weight="1"
+            android:src="@drawable/icons8_doughnut_100" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_medium">
+
+        <TextView
+            style="@style/food_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CHINESE" />
+
+        <TextView
+            style="@style/food_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TACOS" />
+
+        <TextView
+            style="@style/food_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="BURGER" />
+
+        <TextView
+            style="@style/food_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="DONUT" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_regular_2x"
+        android:layout_marginTop="@dimen/margin_card_medium_2"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:text="OFFERS"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold"/>
+
+</LinearLayout>

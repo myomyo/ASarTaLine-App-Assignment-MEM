@@ -23,7 +23,7 @@ public class WarDeeVO {
 
     private List<ShopByDistanceVO> shopByDistance;
 
-    private List<ShopByPopularity> shopByPopularity;
+    private List<ShopByPopularityVO> shopByPopularity;
 
     public String getWarDeeId() {
         return warDeeId;
@@ -64,7 +64,7 @@ public class WarDeeVO {
         return shopByDistance;
     }
 
-    public List<ShopByPopularity> getShopByPopularity() {
+    public List<ShopByPopularityVO> getShopByPopularity() {
         return shopByPopularity;
     }
 }

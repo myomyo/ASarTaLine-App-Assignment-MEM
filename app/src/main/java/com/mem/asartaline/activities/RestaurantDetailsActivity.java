@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide;
 import com.mem.asartaline.R;
 import com.mem.asartaline.data.models.WarDeeModel;
 import com.mem.asartaline.data.vos.WarDeeVO;
+import com.mem.asartaline.utils.GlideApp;
 import com.mem.asartaline.utils.WarDeeConstants;
 
 import butterknife.BindView;
@@ -22,8 +23,14 @@ public class RestaurantDetailsActivity extends BaseActivity {
     @BindView(R.id.tv_title)
     TextView tvName;
 
+    @BindView(R.id.tv_subtitle)
+    TextView tvSubTitle;
+
     @BindView(R.id.tv_description)
     TextView tvDesc;
+
+    @BindView(R.id.tv_note)
+    TextView tvSuitedFor;
 
 
     @Override
@@ -47,12 +54,18 @@ public class RestaurantDetailsActivity extends BaseActivity {
         tvName.setText(warDee.getName());
 
         if(!warDee.getGeneralTaste().isEmpty()){
+            tvSubTitle.setText(warDee.getGeneralTaste().get(0).getTaste());
             tvDesc.setText(warDee.getGeneralTaste().get(0).getTasteDesc());
         }
 
+        if(!warDee.getSuitedFor().isEmpty()){
+            tvSuitedFor.setText(warDee.getSuitedFor().get(0).getSuitedFor());
+        }
         if(!warDee.getImages().isEmpty()){
-            Glide.with(ivImage.getContext())
+            GlideApp.with(ivImage.getContext())
                     .load(warDee.getImages().get(0))
+                    .placeholder(R.drawable.placeholder_image)
+                    .error(R.drawable.empty_image)
                     .into(ivImage);
         }
 

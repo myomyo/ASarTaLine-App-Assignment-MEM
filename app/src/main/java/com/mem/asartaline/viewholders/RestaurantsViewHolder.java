@@ -1,22 +1,18 @@
 package com.mem.asartaline.viewholders;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.mem.asartaline.R;
-import com.mem.asartaline.data.vos.TasteVO;
 import com.mem.asartaline.data.vos.WarDeeVO;
 import com.mem.asartaline.delegates.RestaurantDelegate;
-
-import java.util.List;
+import com.mem.asartaline.utils.GlideApp;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class RestaurantsViewHolder extends RecyclerView.ViewHolder {
+public class RestaurantsViewHolder extends BaseWarDeeViewHolder {
 
     private RestaurantDelegate mRestaurantDelegate;
     private WarDeeVO mWarDee;
@@ -33,9 +29,12 @@ public class RestaurantsViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.tv_restaurant_photo)
     ImageView ivImage;
 
+    @BindView(R.id.tv_food_cost)
+    TextView tvCost;
+
     public RestaurantsViewHolder(View itemView, RestaurantDelegate delegate) {
         super(itemView);
-        ButterKnife.bind(this,itemView);
+        ButterKnife.bind(this, itemView);
         mRestaurantDelegate = delegate;
 
         tvViewDetails.setOnClickListener(new View.OnClickListener() {
@@ -47,19 +46,24 @@ public class RestaurantsViewHolder extends RecyclerView.ViewHolder {
 
     }
 
-    public void bindData(WarDeeVO warDee){
+    @Override
+    public void bindData(WarDeeVO warDee) {
         mWarDee = warDee;
         tvName.setText(warDee.getName());
 
-        if(!warDee.getGeneralTaste().isEmpty()){
+        if (!warDee.getGeneralTaste().isEmpty()) {
             tvFoodType.setText(warDee.getGeneralTaste().get(0).getTaste());
         }
 
-        if(!warDee.getImages().isEmpty()){
-            Glide.with(ivImage.getContext())
+        if (!warDee.getImages().isEmpty()) {
+            GlideApp.with(ivImage.getContext())
                     .load(warDee.getImages().get(0))
+                    .placeholder(R.drawable.placeholder_image)
+                    .error(R.drawable.empty_image)
                     .into(ivImage);
         }
+
+        tvCost.setText(tvCost.getContext().getString(R.string.format_price_limit, warDee.getPriceRangeMin(), warDee.getPriceRangeMax()));
 
     }
 }

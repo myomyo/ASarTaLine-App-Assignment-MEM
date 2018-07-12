@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/accent</item>
+        <item name="colorAccent">@color/primary</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -23,5 +23,12 @@
         <item name="android:textAlignment">center</item>
     </style>
 
-
+    <!--<style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/primary</item>
+        <item name="colorControlActivated">@color/primaryDarkColor</item>
+    </style>-->
+    <style name="AppThemeRatingBar" parent="Theme.AppCompat">
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:colorControlNormal">@color/primary_light</item>
+    </style>
 </resources>

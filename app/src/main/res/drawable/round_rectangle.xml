@@ -12,14 +12,14 @@
     <corners android:bottomRightRadius="16dp"
         android:topLeftRadius="16dp" />
 
-    <size android:height="@dimen/margin_xxlarge"
-        android:width="@dimen/margin_xxlarge"/>
+    <size android:height="40dp"
+        android:width="40dp"/>
 
-    <padding
-        android:left="20dp"
+    <!--<padding
+        android:left="10dp"
         android:top="10dp"
-        android:right="20dp"
+        android:right="10dp"
         android:bottom="10dp"    >
-    </padding>
+    </padding>-->
 
 </shape>

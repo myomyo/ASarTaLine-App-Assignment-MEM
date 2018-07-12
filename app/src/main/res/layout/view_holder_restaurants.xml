@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
@@ -15,7 +16,6 @@
         android:background="@drawable/round_rectangle"
         android:elevation="@dimen/margin_small"
         android:gravity="center"
-        android:padding="@dimen/margin_card_medium"
         android:text="4.6"
         android:textColor="@color/primaryTextColor"
         android:textSize="@dimen/text_regular"/>
@@ -46,9 +46,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/tv_restaurant_photo"
                 android:layout_marginStart="@dimen/margin_medium_2"
-                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_medium"
                 android:layout_toRightOf="@+id/tv_restaurant_photo"
-                android:text="Casa Pop"
+                tools:text="Casa Pop"
                 android:textColor="@color/secondary_text"
                 android:textSize="@dimen/text_regular_2x" />
 
@@ -58,8 +58,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/tv_restaurant_name"
                 android:layout_below="@+id/tv_restaurant_name"
-                android:layout_marginTop="@dimen/margin_small"
-                android:text="Cafe, Italian, Chinese"
+                android:layout_marginTop="@dimen/margin_medium"
+                tools:text="Cafe, Italian, Chinese"
                 android:textColor="@color/secondary_text"
                 android:textSize="@dimen/text_regular" />
 
@@ -69,30 +69,34 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/tv_food_type"
                 android:layout_below="@+id/tv_food_type"
-                android:layout_marginTop="@dimen/margin_small"
-                android:text="Cost $300 for one"
+                android:layout_marginTop="@dimen/margin_medium"
+                tools:text="Cost $300 for one"
                 android:textColor="@color/secondary_text"
                 android:textSize="@dimen/text_regular" />
 
-            <ImageView
-                android:id="@+id/iv_star"
+           <RatingBar
+                android:id="@+id/rating_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/tv_food_cost"
                 android:layout_below="@+id/tv_food_cost"
-                android:layout_marginTop="@dimen/margin_medium"
-                android:src="@drawable/ic_star_orange_24dp" />
+                android:layout_marginTop="@dimen/margin_card_medium_2"
+                android:rating="3.5"
+                android:stepSize="0.5"
+                android:numStars="5"
+               style="?attr/ratingBarStyleSmall"/>
 
             <TextView
                 android:id="@+id/tv_view_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@id/iv_star"
-                android:layout_marginLeft="70dp"
-                android:layout_toRightOf="@+id/iv_star"
+                android:layout_alignTop="@id/rating_bar"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_toRightOf="@+id/rating_bar"
                 android:clickable="true"
                 android:text="View details"
-                android:textColor="@color/primary" />
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_regular"/>
 
 
         </RelativeLayout>

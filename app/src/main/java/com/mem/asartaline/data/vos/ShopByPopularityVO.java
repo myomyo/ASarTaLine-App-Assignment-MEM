@@ -1,6 +1,6 @@
 package com.mem.asartaline.data.vos;
 
-public class ShopByPopularity {
+public class ShopByPopularityVO {
 
     private String shopByPopularityId;
 
